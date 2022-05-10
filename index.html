@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Movies App</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	
+	<div class="container">
+		<h1 class="site-title">Movies App</h1>
+		<div class="site-content">
+			<section class="search">
+				<form class="search-form" action="https://echo.htmlacademy.ru" method="GET">
+					<label class="visually-hidden" for="title-input">Title</label>
+					<input class="search-form__input" type="text" name="title" id="title-input" placeholder="Movie name" required>
+
+					<label class="visually-hidden" for="genre-select">Genre</label>
+					<select class="search-form__select" name="genre" id="genre-select"></select>
+
+					<label class="visually-hidden" for="min-year-input">Released after</label>
+					<input class="search-form__input" type="number" name="min_year" id="min-year-input" placeholder="From" value="1900" required>
+
+					<label class="visually-hidden" for="max-year-input">Released before</label>
+					<input class="search-form__input" type="number" name="max_year" id="max-year-input" placeholder="To" value="2025" required>
+
+					<button class="search-form__submit-button" type="submit">Search</button>
+				</form>
+				
+				<hr>
+				
+				<!-- MOVIES LIST -->
+				<section class="movies">
+					<h2 class="movies__title visually-hidden">Movies' list</h2>
+
+					<ul class="movies__list">						
+					</ul>
+				</section>
+			</section>
+
+			<!-- WATCHLIST -->
+			<section class="watchlist">
+				<h2 class="watchlist__heading">Watchlist</h2>
+				<ul class="watchlist__list">
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<!-- MODALS -->
+	<section class="modal">
+		<div class="modal__content">
+			<button class="modal__close-button" type="button">X</button>
+			<h2 class="modal__movie-title">Movie title</h2>
+			<p class="modal__movie-summary">Movie summary</p>
+		</div>
+	</section>
+
+	<!-- TEMPLATES -->
+	<template id="movie-template">
+		<li class="movies__item movie">
+			<header class="movie__header">
+				<h3 class="movie__title">Lorem ipsum dolor sit.</h3>
+				<span class="movie__rating">9.9</span>
+			</header>
+			<div class="movie__meta">
+				<div class="movie__year">2019</div>
+				<div class="movie__genres">Action</div>
+			</div>
+			<footer class="movie__actions">
+				<a class="movie__trailer-link" href="https://youtube.com/watch?v=">Watch trailer</a>
+				<button class="movie__summary-button" type="button">Read summary</button>
+				<button class="movie__bookmark-button" type="button">Add to watchlist</button>
+			</footer>
+		</li>
+	</template>
+
+	<template id="watchlist-item-template">
+		<li class="watchlist__item">
+			<span class="watchlist__title">Lorem ipsum dolor sit amet.</span>	
+			<button class="watchlist__remove-button" type="button">X</button>
+		</li>
+	</template>
+
+	<script src="js/movies.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
